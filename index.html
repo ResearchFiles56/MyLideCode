@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyLifeCode - 日常コード化パーソナルライブラリ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/python.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MyLifeCode</h1>
+            <div class="header-subtitle">日常コード化パーソナルライブラリ</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-tab="create">コード作成</div>
+            <div class="nav-tab" data-tab="library">ライブラリ</div>
+        </div>
+        
+        <!-- コード作成タブ -->
+        <div class="tab-content active" id="create-tab">
+            <div class="card">
+                <div class="card-title">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a6da7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 18 22 12 16 6'%3E%3C/polyline%3E%3Cpolyline points='8 6 2 12 8 18'%3E%3C/polyline%3E%3C/svg%3E" alt="テンプレート">
+                    ステップ1: テンプレートを選択
+                </div>
+                <div class="card-description">
+                    コード化したい日常シーンに合ったテンプレートを選びましょう。
+                </div>
+                <div class="template-grid">
+                    <div class="card template-card" data-template="sequence">
+                        <div class="card-title">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a6da7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cpolyline points='19 12 12 19 5 12'%3E%3C/polyline%3E%3C/svg%3E" alt="順次実行">
+                            順次実行
+                        </div>
+                        <div class="card-description">
+                            順番に実行する一連の動作（朝の準備、料理の手順など）
+                        </div>
+                    </div>
+                    <div class="card template-card" data-template="condition">
+                        <div class="card-title">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a6da7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='22 7 13.5 15.5 8.5 10.5 2 17'%3E%3C/polyline%3E%3Cpolyline points='16 7 22 7 22 13'%3E%3C/polyline%3E%3C/svg%3E" alt="条件分岐">
+                            条件分岐
+                        </div>
+                        <div class="card-description">
+                            条件によって行動が変わる状況（天気による服装選び、時間帯による行動など）
+                        </div>
+                    </div>
+                    <div class="card template-card" data-template="loop">
+                        <div class="card-title">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a6da7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='17 1 21 5 17 9'%3E%3C/polyline%3E%3Cpath d='M3 11V9a4 4 0 0 1 4-4h14'%3E%3C/path%3E%3Cpolyline points='7 23 3 19 7 15'%3E%3C/polyline%3E%3Cpath d='M21 13v2a4 4 0 0 1-4 4H3'%3E%3C/path%3E%3C/svg%3E" alt="繰り返し">
+                            繰り返し
+                        </div>
+                        <div class="card-description">
+                            同じ動作を決まった回数繰り返す状況（腕立て伏せ10回、階段を5階まで上るなど）
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 言語選択 -->
+            <div class="card" id="language-selection">
+                <div class="card-title">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a6da7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'%3E%3C/path%3E%3C/svg%3E" alt="言語">
+                    プログラミング言語
+                </div>
+                <div class="card-description">
+                    生成するコードの言語を選択してください。
+                </div>
+                <div class="language-selection">
+                    <div class="language-toggle active" data-language="c">
+                        <div class="language-icon">C</div>
+                        <div class="language-name">C言語</div>
+                    </div>
+                    <div class="language-toggle" data-language="python">
+                        <div class="language-icon">Py</div>
+                        <div class="language-name">Python</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="customize-section" style="display: none;">
+                <div class="card">
+                    <div class="card-title">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a6da7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'%3E%3C/path%3E%3Cpath d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'%3E%3C/path%3E%3C/svg%3E" alt="カスタマイズ">
+                        ステップ2: 日常シーンをカスタマイズ
+                    </div>
+                    <div class="card-description" id="template-description">
+                        テンプレートの説明がここに表示されます。
+                    </div>
+                    
+                    <form id="customize-form">
+                        <div class="form-group">
+                            <label class="form-label" for="scene-title">タイトル</label>
+                            <input type="text" class="form-control" id="scene-title" placeholder="例: 朝の準備ルーティン">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="scene-description">説明</label>
+                            <textarea class="form-control" id="scene-description" placeholder="例: 平日の朝に行う一連の準備行動"></textarea>
+                        </div>
+                        
+                        <div id="sequence-inputs" style="display: none;">
+                            <div class="form-group">
+                                <label class="form-label">順次実行するステップ</label>
+                                <div class="steps-container" id="sequence-steps">
+                                    <div class="step-item" draggable="true">
+                                        <div class="step-handle">⋮⋮</div>
+                                        <div class="step-number" title="クリックでステップを削除">1</div>
+                                        <input type="text" class="form-control step-input" placeholder="例: 起きる" value="起きる">
+                                    </div>
+                                    <div class="step-item" draggable="true">
+                                        <div class="step-handle">⋮⋮</div>
+                                        <div class="step-number" title="クリックでステップを削除">2</div>
+                                        <input type="text" class="form-control step-input" placeholder="例: 顔を洗う" value="顔を洗う">
+                                    </div>
+                                    <div class="step-item" draggable="true">
+                                        <div class="step-handle">⋮⋮</div>
+                                        <div class="step-number" title="クリックでステップを削除">3</div>
+                                        <input type="text" class="form-control step-input" placeholder="例: 朝ごはんを食べる" value="朝ごはんを食べる">
+                                    </div>
+                                    <div class="step-item" draggable="true">
+                                        <div class="step-handle">⋮⋮</div>
+                                        <div class="step-number" title="クリックでステップを削除">4</div>
+                                        <input type="text" class="form-control step-input" placeholder="例: 歯を磨く" value="歯を磨く">
+                                    </div>
+                                    <div class="step-item" draggable="true">
+                                        <div class="step-handle">⋮⋮</div>
+                                        <div class="step-number" title="クリックでステップを削除">5</div>
+                                        <input type="text" class="form-control step-input" placeholder="例: 服を着替える" value="服を着替える">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn" id="add-sequence-step">ステップを追加</button>
+                            </div>
+                        </div>
+                        
+                        <div id="condition-inputs" style="display: none;">
+                            <div class="form-group">
+                                <label class="form-label" for="condition-situation">状況</label>
+                                <input type="text" class="form-control" id="condition-situation" placeholder="例: 天気の確認" value="天気の確認">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">条件分岐１</label>
+                                <div class="form-group">
+                                    <label class="form-label" for="condition1">条件</label>
+                                    <input type="text" class="form-control" id="condition1" placeholder="例: 雨が降っている" value="雨が降っている">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="action1">行動</label>
+                                    <input type="text" class="form-control" id="action1" placeholder="例: 傘を持っていく" value="傘を持っていく">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">条件分岐２</label>
+                                <div class="form-group">
+                                    <label class="form-label" for="condition2">条件</label>
+                                    <input type="text" class="form-control" id="condition2" placeholder="例: 晴れている" value="晴れている">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="action2">行動</label>
+                                    <input type="text" class="form-control" id="action2" placeholder="例: 帽子をかぶる" value="帽子をかぶる">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">条件分岐３ (デフォルト)</label>
+                                <div class="form-group">
+                                    <label class="form-label" for="action3">行動</label>
+                                    <input type="text" class="form-control" id="action3" placeholder="例: 特に何も持たない" value="特に何も持たない">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="loop-inputs" style="display: none;">
+                            <div class="form-group">
+                                <label class="form-label" for="loop-count">繰り返す回数</label>
+                                <input type="number" class="form-control" id="loop-count" placeholder="例: 10" value="10" min="1" max="100">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="loop-action">繰り返す行動</label>
+                                <input type="text" class="form-control" id="loop-action" placeholder="例: 腕立て伏せをする" value="腕立て伏せをする">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="loop-count-var">カウンター変数名（任意）</label>
+                                <input type="text" class="form-control" id="loop-count-var" placeholder="例: 回数" value="回数">
+                                <small>※ループ内で何回目かを表す変数名です</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="after-loop">ループ後の行動</label>
+                                <input type="text" class="form-control" id="after-loop" placeholder="例: 水を飲む" value="水を飲む">
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn" id="generate-btn">コードを生成</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="result-section" style="display: none;">
+                <div class="card">
+                    <div class="card-title">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a6da7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='22 12 18 12 15 21 9 3 6 12 2 12'%3E%3C/polyline%3E%3C/svg%3E" alt="結果">
+                        ステップ3: 生成されたコード
+                    </div>
+                    <div class="card-description">
+                        あなたの日常をコードで表現しました。このコードを保存して、いつでも参照できます。
+                    </div>
+                    
+                    <!-- 言語切り替えタブ（結果セクション内） -->
+                    <div class="language-selection result-language-selection">
+                        <div class="language-toggle active" data-language="c">
+                            <div class="language-icon">C</div>
+                            <div class="language-name">C言語</div>
+                        </div>
+                        <div class="language-toggle" data-language="python">
+                            <div class="language-icon">Py</div>
+                            <div class="language-name">Python</div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span id="code-filename">filename.c</span>
+                            <div class="code-actions">
+                                <button class="code-action-btn" id="copy-code-btn">コピー</button>
+                            </div>
+                        </div>
+                        <pre><code class="language-c" id="generated-code">// コードがここに生成されます</code></pre>
+                    </div>
+                    
+                    <div class="explanation-container">
+                        <div class="explanation-title">コード解説:</div>
+                        <div id="code-explanation">
+                            解説がここに表示されます。
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="code-memo">メモ (オプション)</label>
+                        <textarea class="form-control" id="code-memo" placeholder="このコードについてのメモやポイントを残しましょう"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="code-tags">タグ (オプション)</label>
+                        <input type="text" class="form-control" id="code-tags" placeholder="例: 朝の準備,日常,順次実行">
+                        <small>※カンマ区切りで複数入力できます</small>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn" id="edit-btn">編集する</button>
+                        <button class="btn btn-accent" id="save-btn">ライブラリに保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ライブラリタブ -->
+        <div class="tab-content" id="library-tab">
+            <div class="library-controls">
+                <input type="text" class="form-control search-box" id="library-search" placeholder="タイトルやタグで検索...">
+                <button class="btn" id="create-new-btn">新規作成</button>
+            </div>
+            
+            <div class="library-grid" id="library-container">
+                <!-- ライブラリの内容はJavaScriptで動的に生成されます -->
+            </div>
+            
+            <div class="empty-state" id="empty-library" style="display: none;">
+                <div class="empty-state-icon">📚</div>
+                <div class="empty-state-text">ライブラリにはまだ何もありません</div>
+                <button class="btn" id="start-create-btn">最初のコードを作成する</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- コード詳細モーダル -->
+    <div class="modal" id="detail-modal">
+        <div class="modal-content">
+            <div class="modal-title" id="detail-title">コードタイトル</div>
+            <div class="card-description" id="detail-description">コードの説明</div>
+            
+            <!-- 言語切り替えタブ（モーダル内） -->
+            <div class="language-selection modal-language-selection">
+                <div class="language-toggle active" data-language="c">
+                    <div class="language-icon">C</div>
+                    <div class="language-name">C言語</div>
+                </div>
+                <div class="language-toggle" data-language="python">
+                    <div class="language-icon">Py</div>
+                    <div class="language-name">Python</div>
+                </div>
+            </div>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span id="detail-filename">filename.c</span>
+                    <div class="code-actions">
+                        <button class="code-action-btn" id="copy-detail-btn">コピー</button>
+                    </div>
+                </div>
+                <pre><code class="language-c" id="detail-code" class="code-preview">// コード内容</code></pre>
+            </div>
+            
+            <div class="explanation-container">
+                <div class="explanation-title">コード解説:</div>
+                <div id="detail-explanation">解説内容</div>
+            </div>
+            
+            <div id="detail-memo-container">
+                <div class="explanation-title">メモ:</div>
+                <div id="detail-memo">メモ内容</div>
+            </div>
+            
+            <div class="library-card-tags" id="detail-tags">
+                <!-- タグはここに表示されます -->
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn" id="close-detail-btn">閉じる</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            MyLifeCode &copy; 2025 - 日常コード化パーソナルライブラリ
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="templateForms.js"></script>
+    <script src="codeGenerator.js"></script>
+    <script src="library.js"></script>
+    <script src="languageSelector.js"></script>
+</body>
+</html>
