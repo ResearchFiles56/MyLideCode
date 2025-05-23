@@ -1,4 +1,21 @@
-// codeGenerator.js - コード生成関連の処理（言語切り替え対応版）
+// codeGenerator.js - コード生成関連の処理（言語切り替え対応版・改良版）
+
+// 共通の注意事項メッセージを生成
+function generateJapaneseWarningMessage() {
+    return `
+        <div class="warning-message">
+            <h4>⚠️ 重要な注意事項</h4>
+            <p><strong>このコードは学習・理解を目的としており、関数名や変数名に日本語を使用しています。</strong></p>
+            <p>実際のプログラムとして動作させるには、以下の修正が必要です：</p>
+            <ul>
+                <li>関数名を英語に変更する（例：「起きる」→「wake_up」）</li>
+                <li>変数名を英語に変更する（例：「繰り返し回数」→「repeat_count」）</li>
+                <li>コメント,printf関数内に書いてある日本語以外の日本語表記を英語に変更する</li>
+            </ul>
+            <p>この表示は、プログラミングの基本概念（順次実行、条件分岐、繰り返し）を日常例で理解することを目的としています。</p>
+        </div>
+    `;
+}
 
 // コード生成
 function generateCode() {
@@ -91,16 +108,21 @@ function generateCSequenceCode(title, description) {
     // main関数を定義
     code += `int main() {\n    ${title.replace(/\s+/g, '_')}();\n    return 0;\n}`;
     
-    // 解説を生成
+    // 解説を生成（改良版）
     let explanation = `
-        <p>このC言語コードは「${title}」という日常行動を順番に実行するプログラムです。</p>
-        <p>コードの構成:</p>
-        <ul>
-            <li>各ステップ（${steps.join('、')}）を個別の関数として定義しています。</li>
-            <li>「${title.replace(/\s+/g, '_')}」という関数でこれらのステップを順番に呼び出しています。</li>
-            <li>main関数から「${title.replace(/\s+/g, '_')}」関数を呼び出してプログラムを実行します。</li>
-        </ul>
-        <p>プログラミングの順次実行（シーケンス）は、このように上から下へ順番に処理が実行されていく基本的な流れです。</p>
+        ${generateJapaneseWarningMessage()}
+        <div class="explanation-content">
+            <h4>コードの解説</h4>
+            <p>このC言語コードは「${title}」という日常行動を順番に実行するプログラムです。</p>
+            <p>コードの構成:</p>
+            <ul>
+                <li>各ステップ（${steps.join('、')}）を個別の関数として定義しています。</li>
+                <li>「${title.replace(/\s+/g, '_')}」という関数でこれらのステップを順番に呼び出しています。</li>
+                <li>main関数から「${title.replace(/\s+/g, '_')}」関数を呼び出してプログラムを実行します。</li>
+            </ul>
+            <p><strong>順次実行（シーケンス）</strong>は、プログラミングの基本概念の一つで、上から下へ順番に処理が実行されていく流れです。日常生活の「朝の準備」のように、決まった順序で行動することと同じ概念です。</p>
+            
+        </div>
     `;
     
     return { code, explanation };
@@ -136,16 +158,21 @@ function generatePythonSequenceCode(title, description) {
     // Pythonでのエントリポイント
     code += `if __name__ == "__main__":\n    ${title.replace(/\s+/g, '_')}()`;
     
-    // 解説を生成（Pythonバージョン用に少し調整）
+    // 解説を生成（改良版）
     let explanation = `
-        <p>このPythonコードは「${title}」という日常行動を順番に実行するプログラムです。</p>
-        <p>コードの構成:</p>
-        <ul>
-            <li>各ステップ（${steps.join('、')}）を個別の関数として定義しています。</li>
-            <li>「${title.replace(/\s+/g, '_')}」という関数でこれらのステップを順番に呼び出しています。</li>
-            <li><code>if __name__ == "__main__":</code> ブロックから「${title.replace(/\s+/g, '_')}」関数を呼び出してプログラムを実行します。</li>
-        </ul>
-        <p>プログラミングの順次実行（シーケンス）は、このように上から下へ順番に処理が実行されていく基本的な流れです。</p>
+        ${generateJapaneseWarningMessage()}
+        <div class="explanation-content">
+            <h4>コードの解説</h4>
+            <p>このPythonコードは「${title}」という日常行動を順番に実行するプログラムです。</p>
+            <p>コードの構成:</p>
+            <ul>
+                <li>各ステップ（${steps.join('、')}）を個別の関数として定義しています。</li>
+                <li>「${title.replace(/\s+/g, '_')}」という関数でこれらのステップを順番に呼び出しています。</li>
+                <li><code>if __name__ == "__main__":</code> ブロックから「${title.replace(/\s+/g, '_')}」関数を呼び出してプログラムを実行します。</li>
+            </ul>
+            <p><strong>順次実行（シーケンス）</strong>は、プログラミングの基本概念の一つで、上から下へ順番に処理が実行されていく流れです。日常生活の「朝の準備」のように、決まった順序で行動することと同じ概念です。</p>
+            
+        </div>
     `;
     
     return { code, explanation };
@@ -194,16 +221,21 @@ function generateCConditionCode(title, description) {
     code += `    ${title.replace(/\s+/g, '_')}(3); // それ以外の場合\n`;
     code += `    return 0;\n}`;
     
-    // 解説を生成
+    // 解説を生成（改良版）
     let explanation = `
-        <p>このC言語コードは「${title}」という条件によって行動が変わる状況を表現しています。</p>
-        <p>コードの構成:</p>
-        <ul>
-            <li>3つの行動（${action1}、${action2}、${action3}）を個別の関数として定義しています。</li>
-            <li>「${title.replace(/\s+/g, '_')}」関数では「${situation}」を確認し、条件に応じて異なる行動を実行します。</li>
-            <li>条件分岐には if-else if-else 構文を使用しています。</li>
-        </ul>
-        <p>プログラミングの条件分岐（if文）は、条件によって実行する処理を切り替える制御構造です。日常生活の「もし〜なら〜する、そうでなければ〜する」という判断と同じです。</p>
+        ${generateJapaneseWarningMessage()}
+        <div class="explanation-content">
+            <h4>コードの解説</h4>
+            <p>このC言語コードは「${title}」という条件によって行動が変わる状況を表現しています。</p>
+            <p>コードの構成:</p>
+            <ul>
+                <li>3つの行動（${action1}、${action2}、${action3}）を個別の関数として定義しています。</li>
+                <li>「${title.replace(/\s+/g, '_')}」関数では「${situation}」を確認し、条件に応じて異なる行動を実行します。</li>
+                <li>条件分岐には if-else if-else 構文を使用しています。</li>
+            </ul>
+            <p><strong>条件分岐（if文）</strong>は、プログラミングの基本概念の一つで、条件によって実行する処理を切り替える制御構造です。日常生活の「もし雨なら傘を持つ、そうでなければ帽子をかぶる」という判断と同じ概念です。</p>
+            
+        </div>
     `;
     
     return { code, explanation };
@@ -249,16 +281,22 @@ function generatePythonConditionCode(title, description) {
     code += `    print()\n`;
     code += `    ${title.replace(/\s+/g, '_')}(3)  # それ以外の場合`;
     
-    // 解説を生成
+    // 解説を生成（改良版）
     let explanation = `
-        <p>このPythonコードは「${title}」という条件によって行動が変わる状況を表現しています。</p>
-        <p>コードの構成:</p>
-        <ul>
-            <li>3つの行動（${action1}、${action2}、${action3}）を個別の関数として定義しています。</li>
-            <li>「${title.replace(/\s+/g, '_')}」関数では「${situation}」を確認し、条件に応じて異なる行動を実行します。</li>
-            <li>条件分岐には if-elif-else 構文を使用しています。</li>
-        </ul>
-        <p>プログラミングの条件分岐（if文）は、条件によって実行する処理を切り替える制御構造です。日常生活の「もし〜なら〜する、そうでなければ〜する」という判断と同じです。</p>
+        ${generateJapaneseWarningMessage()}
+        <div class="explanation-content">
+            <h4>コードの解説</h4>
+            <p>このPythonコードは「${title}」という条件によって行動が変わる状況を表現しています。</p>
+            <p>コードの構成:</p>
+            <ul>
+                <li>3つの行動（${action1}、${action2}、${action3}）を個別の関数として定義しています。</li>
+                <li>「${title.replace(/\s+/g, '_')}」関数では「${situation}」を確認し、条件に応じて異なる行動を実行します。</li>
+                <li>条件分岐には if-elif-else 構文を使用しています。</li>
+            </ul>
+            <p><strong>条件分岐（if文）</strong>は、プログラミングの基本概念の一つで、条件によって実行する処理を切り替える制御構造です。日常生活の「もし雨なら傘を持つ、そうでなければ帽子をかぶる」という判断と同じ概念です。</p>
+            
+
+        </div>
     `;
     
     return { code, explanation };
@@ -302,17 +340,22 @@ function generateCLoopCode(title, description) {
     code += `    ${title.replace(/\s+/g, '_')}(${loopCount}); // ${loopCount}回繰り返す\n`;
     code += `    return 0;\n}`;
     
-    // 解説を生成
+    // 解説を生成（改良版）
     let explanation = `
-        <p>このC言語コードは「${title}」という繰り返し行動を表現しています。</p>
-        <p>コードの構成:</p>
-        <ul>
-            <li>「${action}」という行動を${loopCount}回繰り返します。</li>
-            <li>各繰り返しで、現在何回目かを「${countVar}」という変数で管理します。</li>
-            <li>すべての繰り返し後に「${afterLoop}」という処理を行います。</li>
-            <li>繰り返しには for ループを使用しています。</li>
-        </ul>
-        <p>プログラミングのループ（繰り返し）は、同じような処理を複数回実行する制御構造です。日常生活でも「腕立て伏せを10回する」「階段を5階まで上る」など、同じ操作を繰り返す場面でよく使われます。</p>
+        ${generateJapaneseWarningMessage()}
+        <div class="explanation-content">
+            <h4>コードの解説</h4>
+            <p>このC言語コードは「${title}」という繰り返し行動を表現しています。</p>
+            <p>コードの構成:</p>
+            <ul>
+                <li>「${action}」という行動を${loopCount}回繰り返します。</li>
+                <li>各繰り返しで、現在何回目かを「${countVar}」という変数で管理します。</li>
+                <li>すべての繰り返し後に「${afterLoop}」という処理を行います。</li>
+                <li>繰り返しには for ループを使用しています。</li>
+            </ul>
+            <p><strong>ループ（繰り返し）</strong>は、プログラミングの基本概念の一つで、同じような処理を複数回実行する制御構造です。日常生活でも「腕立て伏せを10回する」「階段を5階まで上る」など、同じ操作を繰り返す場面でよく使われます。</p>
+            
+        </div>
     `;
     
     return { code, explanation };
@@ -351,17 +394,21 @@ function generatePythonLoopCode(title, description) {
     code += `if __name__ == "__main__":\n`;
     code += `    ${title.replace(/\s+/g, '_')}(${loopCount})  # ${loopCount}回繰り返す`;
     
-    // 解説を生成
+    // 解説を生成（改良版）
     let explanation = `
-        <p>このPythonコードは「${title}」という繰り返し行動を表現しています。</p>
-        <p>コードの構成:</p>
-        <ul>
-            <li>「${action}」という行動を${loopCount}回繰り返します。</li>
-            <li>各繰り返しで、現在何回目かを「${countVar}」という変数で管理します。</li>
-            <li>すべての繰り返し後に「${afterLoop}」という処理を行います。</li>
-            <li>繰り返しには for ループと range() 関数を使用しています。</li>
-        </ul>
-        <p>プログラミングのループ（繰り返し）は、同じような処理を複数回実行する制御構造です。日常生活でも「腕立て伏せを10回する」「階段を5階まで上る」など、同じ操作を繰り返す場面でよく使われます。</p>
+        ${generateJapaneseWarningMessage()}
+        <div class="explanation-content">
+            <h4>コードの解説</h4>
+            <p>このPythonコードは「${title}」という繰り返し行動を表現しています。</p>
+            <p>コードの構成:</p>
+            <ul>
+                <li>「${action}」という行動を${loopCount}回繰り返します。</li>
+                <li>各繰り返しで、現在何回目かを「${countVar}」という変数で管理します。</li>
+                <li>すべての繰り返し後に「${afterLoop}」という処理を行います。</li>
+                <li>繰り返しには for ループと range() 関数を使用しています。</li>
+            </ul>
+            <p><strong>ループ（繰り返し）</strong>は、プログラミングの基本概念の一つで、同じような処理を複数回実行する制御構造です。日常生活でも「腕立て伏せを10回する」「階段を5階まで上る」など、同じ操作を繰り返す場面でよく使われます。</p>
+        </div>
     `;
     
     return { code, explanation };
