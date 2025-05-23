@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 最初のガイドテキストを表示
     showInitialGuide();
+
+     // 新規追加：リアルタイム検証の初期化
+    initRealTimeValidation();
 });
 
 // 最初のガイドテキストを表示・制御
@@ -126,7 +129,7 @@ function initTemplateSelection() {
     });
 }
 
-// ボタン操作の初期化
+// ボタン操作の初期化を修正
 function initButtons() {
     // 順次実行のステップ追加ボタン
     const addStepButton = document.getElementById('add-sequence-step');
@@ -134,55 +137,48 @@ function initButtons() {
         addStepButton.addEventListener('click', addSequenceStep);
     }
     
-    // コード生成ボタン
+    // コード生成ボタン - 検証機能付きに変更
     const generateButton = document.getElementById('generate-btn');
     if (generateButton) {
-        generateButton.addEventListener('click', generateCode);
+        generateButton.addEventListener('click', generateCodeWithValidation);
     }
     
-    // コードコピーボタン
+    // 既存のその他のボタンイベント...
     const copyCodeButton = document.getElementById('copy-code-btn');
     if (copyCodeButton) {
         copyCodeButton.addEventListener('click', () => copyToClipboard('generated-code'));
     }
     
-    // 詳細コードコピーボタン
     const copyDetailButton = document.getElementById('copy-detail-btn');
     if (copyDetailButton) {
         copyDetailButton.addEventListener('click', () => copyToClipboard('detail-code'));
     }
     
-    // 編集ボタン
     const editButton = document.getElementById('edit-btn');
     if (editButton) {
         editButton.addEventListener('click', editGeneratedCode);
     }
     
-    // 保存ボタン
     const saveButton = document.getElementById('save-btn');
     if (saveButton) {
         saveButton.addEventListener('click', saveToLibrary);
     }
     
-    // 新規作成ボタン
     const createNewButton = document.getElementById('create-new-btn');
     if (createNewButton) {
         createNewButton.addEventListener('click', goToCreateTab);
     }
     
-    // スタート作成ボタン（空のライブラリ用）
     const startCreateButton = document.getElementById('start-create-btn');
     if (startCreateButton) {
         startCreateButton.addEventListener('click', goToCreateTab);
     }
     
-    // モーダル閉じるボタン
     const closeDetailButton = document.getElementById('close-detail-btn');
     if (closeDetailButton) {
         closeDetailButton.addEventListener('click', closeDetailModal);
     }
     
-    // 検索ボックス
     const searchBox = document.getElementById('library-search');
     if (searchBox) {
         searchBox.addEventListener('input', filterLibrary);
@@ -194,11 +190,7 @@ function initButtons() {
         toggle.addEventListener('click', function() {
             const language = this.getAttribute('data-language');
             setSelectedLanguage(language);
-            
-            // 他のトグルのアクティブ状態を更新
             updateLanguageToggles(language);
-            
-            // コードを再生成
             generateCode();
         });
     });
@@ -209,11 +201,7 @@ function initButtons() {
         toggle.addEventListener('click', function() {
             const language = this.getAttribute('data-language');
             setSelectedLanguage(language);
-            
-            // 他のトグルのアクティブ状態を更新
             updateLanguageToggles(language);
-            
-            // 現在表示中のコード詳細を更新
             updateDetailCodeLanguage();
         });
     });

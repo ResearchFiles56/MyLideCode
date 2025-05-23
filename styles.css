@@ -571,3 +571,162 @@ footer {
 .template-card:hover .card-title img {
     transform: scale(1.2);
 }
+
+/* 入力検証用CSSスタイル - styles.cssに追加 */
+
+/* エラー状態のフィールド */
+.form-control.error {
+    border-color: #e74c3c;
+    background-color: #fdf2f2;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+}
+
+.form-control.error:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3);
+}
+
+/* 有効状態のフィールド */
+.form-control.valid {
+    border-color: #27ae60;
+    background-color: #f8fff8;
+}
+
+.form-control.valid:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.2);
+}
+
+/* エラーメッセージコンテナ */
+.error-message-container {
+    background-color: #fdf2f2;
+    border: 1px solid #e74c3c;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin: 20px 0;
+    animation: slideDown 0.3s ease-out;
+}
+
+.error-title {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.error-title::before {
+    content: "⚠️";
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.error-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.error-list li {
+    color: #c0392b;
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.error-list li::before {
+    content: "•";
+    color: #e74c3c;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* エラーメッセージのアニメーション */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ステップアイテムのエラー状態 */
+.step-item .step-input.error {
+    border-color: #e74c3c;
+    background-color: #fdf2f2;
+}
+
+.step-item .step-input.valid {
+    border-color: #27ae60;
+    background-color: #f8fff8;
+}
+
+/* フォームグループ全体のエラー表示 */
+.form-group.has-error .form-label {
+    color: #e74c3c;
+}
+
+.form-group.has-error .form-label::after {
+    content: " *";
+    color: #e74c3c;
+}
+
+/* 成功メッセージ用（オプション） */
+.success-message-container {
+    background-color: #f8fff8;
+    border: 1px solid #27ae60;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin: 20px 0;
+    color: #27ae60;
+    animation: slideDown 0.3s ease-out;
+}
+
+.success-message-container::before {
+    content: "✅";
+    margin-right: 8px;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .error-message-container {
+        margin: 15px 0;
+        padding: 15px;
+    }
+    
+    .error-title {
+        font-size: 1rem;
+    }
+    
+    .error-list li {
+        font-size: 0.9rem;
+    }
+}
+
+/* アクセシビリティ改善 */
+.form-control[aria-invalid="true"] {
+    border-color: #e74c3c;
+}
+
+.form-control[aria-invalid="false"] {
+    border-color: #27ae60;
+}
+
+/* フォーカス時の強調表示（エラー状態） */
+.form-control.error:focus {
+    outline: none;
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3);
+}
+
+/* 必須フィールド表示 */
+.form-label.required::after {
+    content: " *";
+    color: #e74c3c;
+    font-weight: normal;
+}
