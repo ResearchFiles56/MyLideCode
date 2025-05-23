@@ -73,3 +73,8 @@ function getFileExtension() {
 function getSelectedLanguage() {
     return selectedLanguage;
 }
+
+// 言語を設定する関数（library.jsから呼び出される）
+function setSelectedLanguage(language) {
+    selectedLanguage = language;
+}
