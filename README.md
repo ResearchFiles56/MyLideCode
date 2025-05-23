@@ -133,12 +133,6 @@ MyLifeCode/
 
 このプロジェクトは [MIT License](LICENSE) の下で公開されています。
 
-## 👨‍💻 作者
-
-**[Your Name]**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-
 ## 🙏 謝辞
 
 - [highlight.js](https://highlightjs.org/) - シンタックスハイライト機能
