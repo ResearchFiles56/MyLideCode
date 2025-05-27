@@ -1,149 +1,145 @@
 # MyLifeCode
 
-**日常コード化パーソナルライブラリ**
+**Daily Life Programming Personal Library**
 
-MyLifeCodeは、日常生活のシーンをプログラミングコードとして表現し、初学者のプログラミング学習をサポートするWebアプリケーションです。
+MyLifeCode is a web application that represents daily life scenarios as programming code to support programming learning for beginners.
 
-## 🌟 特徴
+## 🌟 Features
 
-- 📝 **直感的なコード生成**: 日常的な行動をプログラミングの基本概念（順次実行、条件分岐、繰り返し）に当てはめてコードを自動生成
-- 🔄 **多言語対応**: C言語とPythonの両方でコードを生成・表示
-- ✅ **リアルタイム入力検証**: エラー状態の視覚的フィードバックと詳細なガイダンスメッセージ
-- 📚 **パーソナルライブラリ**: 生成したコードを保存・管理し、いつでも参照可能
-- 📱 **レスポンシブデザイン**: デスクトップからモバイルまで、あらゆるデバイスに対応
-- 🎨 **シンタックスハイライト**: コードを見やすく色分け表示
+- 📝 **Intuitive Code Generation**: Automatically generate code by mapping daily activities to fundamental programming concepts (sequential execution, conditional branching, loops)
+- 🔄 **Multi-language Support**: Generate and display code in both C and Python
+- ✅ **Real-time Input Validation**: Visual feedback for error states with detailed guidance messages
+- 📚 **Personal Library**: Save and manage generated code for reference anytime
+- 📱 **Responsive Design**: Compatible with all devices from desktop to mobile
+- 🎨 **Syntax Highlighting**: Color-coded code display for better readability
 
-## 🚀 デモ
+## 📖 Usage
 
-[ライブデモを見る](https://yourusername.github.io/MyLifeCode/)
+### 1. Select Template
+Choose from three fundamental programming concepts:
+- **Sequential Execution**: Series of actions executed in order (morning routines, cooking procedures, etc.)
+- **Conditional Branching**: Situations where actions change based on conditions (clothing selection based on weather, time-based actions, etc.)
+- **Loops**: Repeating the same action a set number of times (10 push-ups, climbing 5 floors, etc.)
 
-## 📖 使い方
+### 2. Customize Scenario
+- Enter title and description
+- Set detailed information according to each template
+- Add, delete, and reorder steps (for sequential execution)
+- Real-time input validation for immediate error checking and correction
 
-### 1. テンプレートを選択
-3つの基本的なプログラミング概念から選択します：
-- **順次実行**: 朝の準備ルーティンなど、順番に実行する一連の動作
-- **条件分岐**: 天気による服装選びなど、条件によって行動が変わる状況
-- **繰り返し**: 腕立て伏せ10回など、同じ動作を決まった回数繰り返す状況
+### 3. Generate and Save Code
+- Generate code in C or Python
+- Review explanations of the generated code
+- Add memos and tags to save in library
 
-### 2. シーンをカスタマイズ
-- タイトルと説明を入力
-- 各テンプレートに応じた詳細情報を設定
-- ステップの追加・削除・並び替え（順次実行の場合）
-- リアルタイム入力検証でエラーを即座に確認・修正
+### 4. Library Management
+- Display saved code in list view
+- Quickly find target code using tags and search functionality
+- View code details and copy functionality
 
-### 3. コードを生成・保存
-- C言語またはPythonでコードを生成
-- 生成されたコードの解説を確認
-- メモやタグを追加してライブラリに保存
-
-### 4. ライブラリで管理
-- 保存したコードを一覧表示
-- タグや検索機能で目的のコードを素早く発見
-- コードの詳細表示・コピー機能
-
-## 🛠️ 技術スタック
+## 🛠️ Technology Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
-- **スタイリング**: カスタムCSS（レスポンシブデザイン）
-- **シンタックスハイライト**: [highlight.js](https://highlightjs.org/)
-- **入力検証**: Pure JavaScriptによるリアルタイム検証システム
-- **データストレージ**: ブラウザのLocal Storage
-- **ホスティング**: GitHub Pages
+- **Styling**: Custom CSS (Responsive Design)
+- **Syntax Highlighting**: [highlight.js](https://highlightjs.org/)
+- **Input Validation**: Real-time validation system using Pure JavaScript
+- **Data Storage**: Browser Local Storage
+- **Hosting**: GitHub Pages
 
-## 📁 プロジェクト構造
+## 📁 Project Structure
 
 ```
 MyLifeCode/
-├── index.html              # メインHTMLファイル
-├── styles.css              # スタイルシート
-├── main.js                 # メイン機能・初期化
-├── templateForms.js        # テンプレートフォーム管理
-├── codeGenerator.js        # コード生成エンジン
-├── library.js              # ライブラリ機能
-├── languageSelector.js     # 言語切り替え機能
-├── validation.js           # 入力検証・エラーハンドリング
-└── README.md              # このファイル
+├── index.html              # Main HTML file
+├── styles.css              # Stylesheet
+├── main.js                 # Main functionality and initialization
+├── templateForms.js        # Template form management
+├── codeGenerator.js        # Code generation engine
+├── library.js              # Library functionality
+├── languageSelector.js     # Language switching functionality
+├── validation.js           # Input validation and error handling
+└── README.md              # This file
 ```
 
-## 🚀 セットアップ・実行方法
+## 🚀 Setup and Execution
 
-### ローカル環境での実行
+### Local Environment Execution
 
-1. **リポジトリをクローン**
+1. **Clone Repository**
    ```bash
    git clone https://github.com/yourusername/MyLifeCode.git
    cd MyLifeCode
    ```
 
-2. **ブラウザで直接開く**
+2. **Open Directly in Browser**
    ```bash
-   # ファイルを直接ブラウザで開く
+   # Open file directly in browser
    open index.html
    ```
 
-3. **ローカルサーバーで実行（推奨）**
+3. **Run with Local Server (Recommended)**
    ```bash
-   # Python 3を使用
+   # Using Python 3
    python -m http.server 8000
    
-   # または Node.js Live Server
+   # Or Node.js Live Server
    npx live-server
    ```
 
-   ブラウザで `http://localhost:8000` にアクセス
+   Access via browser at `http://localhost:8000`
 
-### GitHub Pagesでの公開
+### GitHub Pages Deployment
 
-1. GitHubでリポジトリを作成
-2. ファイルをプッシュ
-3. リポジトリ設定でGitHub Pagesを有効化
-4. `https://yourusername.github.io/MyLifeCode/` でアクセス可能
+1. Create repository on GitHub
+2. Push files
+3. Enable GitHub Pages in repository settings
+4. Access at `https://yourusername.github.io/MyLifeCode/`
 
-## 🎯 対象ユーザー
+## 🎯 Target Users
 
-- **プログラミング初学者**: 基本的なプログラミング概念を日常例で理解したい方
+- **Programming Beginners**: Those who want to understand basic programming concepts through daily life examples
 
-## 🔮 将来の展望
+## 🔮 Future Vision
 
-### 予定している改善
+### Planned Improvements
 
-1. **自然言語処理の導入**
-   - Large Language Model (LLM) の活用により、より自然で柔軟なコード生成
+1. **Natural Language Processing Integration**
+   - More natural and flexible code generation through Large Language Model (LLM) utilization
 
-2. **テンプレートの拡張**
-   - より多様なプログラミングパターンのサポート
-   - 関数、配列、オブジェクト指向概念の追加
+2. **Template Expansion**
+   - Support for more diverse programming patterns
+   - Addition of functions, arrays, and object-oriented concepts
 
-3. **ユーザビリティ向上**
-   - ユーザーテスト結果を基にしたUI/UX改善
-   - アクセシビリティ機能の強化
+3. **Usability Enhancement**
+   - UI/UX improvements based on user testing results
+   - Accessibility feature strengthening
 
-### 技術的改善点
+### Technical Improvements
 
-- より高度な入力検証とユーザーガイダンス
-- パフォーマンス最適化
-- 追加のプログラミング言語サポート（JavaScript、Java等）
+- More advanced input validation and user guidance
+- Performance optimization
+- Additional programming language support (JavaScript, Java, etc.)
 
-## 🐛 既知の問題・制限事項
+## 🐛 Known Issues and Limitations
 
-- テンプレート文の組み合わせにより、時々不自然な日本語表現が生成される
-- 生成できるコードパターンが基本的な構造に限定されている
-- ブラウザのLocal Storageに依存しているため、データの永続性に制限がある
+- Template sentence combinations sometimes generate unnatural Japanese expressions
+- Generated code patterns are limited to basic structures
+- Data persistence limitations due to dependence on browser Local Storage
 
-## ✨ 新機能
+## ✨ New Features
 
-### 入力検証システム
-- **リアルタイム検証**: 入力時にエラー状態を即座に表示
-- **視覚的フィードバック**: 色分けされたフィールド状態（正常/エラー）
-- **詳細なエラーメッセージ**: 具体的な修正方法を示すガイダンス
-- **テンプレート別検証**: 各テンプレートに特化した検証ルール
+### Input Validation System
+- **Real-time Validation**: Immediate display of error states during input
+- **Visual Feedback**: Color-coded field states (normal/error)
+- **Detailed Error Messages**: Guidance showing specific correction methods
+- **Template-specific Validation**: Validation rules specialized for each template
 
-## 📄 ライセンス
+## 📄 License
 
-このプロジェクトは [MIT License](LICENSE) の下で公開されています。
+This project is released under the [MIT License](LICENSE).
 
-## 🙏 謝辞
+## 🙏 Acknowledgments
 
-- [highlight.js](https://highlightjs.org/) - シンタックスハイライト機能
-- [cdnjs](https://cdnjs.com/) - CDNサービス
-- すべてのテスターとフィードバックを提供してくれた方々
+- [highlight.js](https://highlightjs.org/) - Syntax highlighting functionality
+- [cdnjs](https://cdnjs.com/) - CDN service
+- All testers and those who provided feedback
