@@ -2,42 +2,42 @@
 
 **Daily Life Programming Personal Library**
 
-MyLifeCode is a web application that represents daily life scenarios as programming code to support programming learning for beginners.
+MyLifeCodeは、日常生活のシーンをプログラミングコードとして表現し、初学者のプログラミング学習をサポートするWebアプリケーションです。
 
-## 🌟 Features
+## 🌟 特徴
 
-- 📝 **Intuitive Code Generation**: Automatically generate code by mapping daily activities to fundamental programming concepts (sequential execution, conditional branching, loops)
-- 🔄 **Multi-language Support**: Generate and display code in both C and Python
-- ✅ **Real-time Input Validation**: Visual feedback for error states with detailed guidance messages
-- 📚 **Personal Library**: Save and manage generated code for reference anytime
-- 📱 **Responsive Design**: Compatible with all devices from desktop to mobile
-- 🎨 **Syntax Highlighting**: Color-coded code display for better readability
+- 📝 **直感的なコード生成**: 日常的な行動をプログラミングの基本概念（順次実行、条件分岐、繰り返し）に当てはめてコードを自動生成
+- 🔄 **多言語対応**: C言語とPythonの両方でコードを生成・表示
+- ✅ **リアルタイム入力検証**: エラー状態の視覚的フィードバックと詳細なガイダンスメッセージ
+- 📚 **パーソナルライブラリ**: 生成したコードを保存・管理し、いつでも参照可能
+- 📱 **レスポンシブデザイン**: デスクトップからモバイルまで、あらゆるデバイスに対応
+- 🎨 **シンタックスハイライト**: コードを見やすく色分け表示
 
-## 📖 Usage
+## 📖 使い方
 
-### 1. Select Template
-Choose from three fundamental programming concepts:
-- **Sequential Execution**: Series of actions executed in order (morning routines, cooking procedures, etc.)
-- **Conditional Branching**: Situations where actions change based on conditions (clothing selection based on weather, time-based actions, etc.)
-- **Loops**: Repeating the same action a set number of times (10 push-ups, climbing 5 floors, etc.)
+### 1. テンプレートを選択
+3つの基本的なプログラミング概念から選択します：
+- **順次実行**: 朝の準備ルーティンなど、順番に実行する一連の動作
+- **条件分岐**: 天気による服装選びなど、条件によって行動が変わる状況
+- **繰り返し**: 腕立て伏せ10回など、同じ動作を決まった回数繰り返す状況
 
-### 2. Customize Scenario
-- Enter title and description
-- Set detailed information according to each template
-- Add, delete, and reorder steps (for sequential execution)
-- Real-time input validation for immediate error checking and correction
+### 2. シーンをカスタマイズ
+- タイトルと説明を入力
+- 各テンプレートに応じた詳細情報を設定
+- ステップの追加・削除・並び替え（順次実行の場合）
+- リアルタイム入力検証でエラーを即座に確認・修正
 
-### 3. Generate and Save Code
-- Generate code in C or Python
-- Review explanations of the generated code
-- Add memos and tags to save in library
+### 3. コードを生成・保存
+- C言語またはPythonでコードを生成
+- 生成されたコードの解説を確認
+- メモやタグを追加してライブラリに保存
 
-### 4. Library Management
-- Display saved code in list view
-- Quickly find target code using tags and search functionality
-- View code details and copy functionality
+### 4. ライブラリで管理
+- 保存したコードを一覧表示
+- タグや検索機能で目的のコードを素早く発見
+- コードの詳細表示・コピー機能
 
-## 🛠️ Technology Stack
+## 🛠️ 技術スタック
 
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
 - **Styling**: Custom CSS (Responsive Design)
@@ -140,6 +140,6 @@ This project is released under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- [highlight.js](https://highlightjs.org/) - Syntax highlighting functionality
-- [cdnjs](https://cdnjs.com/) - CDN service
-- All testers and those who provided feedback
+- [highlight.js](https://highlightjs.org/) - シンタックスハイライト機能
+- [cdnjs](https://cdnjs.com/) - CDNサービス
+- すべてのテスターとフィードバックを提供してくれた方々
